@@ -1,0 +1,63 @@
+﻿@inherits Umbraco.Cms.Web.Common.Views.UmbracoViewPage
+<section class="news-article-section">
+    <div class="container">
+        <div class="news-article-title">
+            <h1></h1>
+            <ul>
+                <li>Mar 25, 2023</li>
+                <li>@Model.Value("newsArticleCategory")</li>
+                <li>Kimberly Hansen</li>
+            </ul>
+
+        </div>
+
+        <div class="content">
+            <img src="/images/news_images/Image.svg" alt="">
+            <p>@Model.Value("newsArticleContent")</p>
+        </div>
+        <div class="news-themes">
+            <ul class="tags">
+                <li>Digitalization</li>
+                <li>School</li>
+                <li>IT</li>
+                <li>Design</li>
+                <li>Work</li>
+                <li>Tech</li>
+            </ul>
+        </div>
+    </div>
+    <div class="side-content">
+        <div class="search-container">
+            <input type="text" placeholder="Type to search..." class="search-input">
+            <button class="search-button"><i class="fa fa-search"></i></button>
+        </div>
+        <div class="recent-posts">
+            <h2>Recent Posts</h2>
+            <ul class="recent-list">
+                <li>
+                    How To Blow Through Capital At An Incredible Rate <p>Jan 14, 2020</p>
+                </li>
+                <li>
+                    Design Studios That Everyone Should Know About? <p>Jan 14, 2020</p>
+                </li>
+                <li>
+                    How did we get 1M+ visitors in 30 days without anything! <p>Jan 14, 2020</p>
+                </li>
+                <li>
+                    Figma On Figma: How We Built Our Website Design System <p>Jan 14, 2020</p>
+                </li>
+            </ul>
+        </div>
+        <div class="categories">
+            <h2>Categories</h2>
+            <ul>
+                <li>Technology - 20 Posts</li>
+                <li>Freelancing - 07 Posts</li>
+                <li>Writing - 16 Posts</li>
+                <li>Marketing - 11 Posts</li>
+                <li>Business - 35 Posts</li>
+                <li>Education - 14 Posts</li>
+            </ul>
+        </div>
+    </div>
+</section>

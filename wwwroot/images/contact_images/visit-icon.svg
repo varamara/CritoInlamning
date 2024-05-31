@@ -1,0 +1,11 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="60" height="60" viewBox="0 0 60 60">
+  <g id="Icon" transform="translate(-360 -588)">
+    <circle id="Ellipse_10" data-name="Ellipse 10" cx="30" cy="30" r="30" transform="translate(360 588)" fill="#191919"/>
+    <g id="fluent:location-48-filled" transform="translate(378 606.75)">
+      <rect id="fluent:location-48-filled-2" data-name="fluent:location-48-filled" width="24" height="24" fill="none"/>
+      <g id="Group">
+        <path id="Vector" d="M16.008,12.49a8.519,8.519,0,0,1-.91,1.37c-.035.044-.071.087-.108.13h0L14.981,14H15L9.956,19.355a2,2,0,0,1-2.911,0L2,14h.019l-.009-.01L2,13.977A8.5,8.5,0,1,1,16.007,12.49Zm-5.384-1.618A3,3,0,1,0,8.5,11.75,3,3,0,0,0,10.623,10.871Z" transform="translate(3.5 2)" fill="#fff"/>
+      </g>
+    </g>
+  </g>
+</svg>

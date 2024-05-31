@@ -1,0 +1,31 @@
+﻿@using Umbraco.Cms.Core.Models.PublishedContent
+@using Umbraco.Cms.Web.Common.PublishedModels
+@inherits Umbraco.Cms.Web.Common.Views.UmbracoViewPage<ContentModels.HomePage>
+@using ContentModels = Umbraco.Cms.Web.Common.PublishedModels
+
+<section class="why-choose-us-section">
+    <div class="container">
+        <div class="choose-us-text">
+            <div class="choose-us-title">
+                <h2 class="h2-2">Why Choose Us</h2>
+                <h1>Why We Are The Best Business Consulting Agency</h1>
+            </div>
+            <div class="choose-us-list">
+                @Html.GetBlockListHtml(Model.WhyChooseUs)
+            </div>
+        </div>
+
+        <div class="choose-us-image">
+            @{
+                var whyChooseUsImage = Model.Value<IPublishedContent>("whyChooseUsSectionImage");
+                var whyChooseUsTitle = Model.Value<string>("whyChooseUsSectionTitle");
+
+                if (whyChooseUsImage != null && !string.IsNullOrEmpty(whyChooseUsTitle))
+                {
+                <img src="@whyChooseUsImage.Url()" alt="@whyChooseUsTitle">
+                }
+            }
+        </div>
+    </div>
+    <div class="color-block"></div>
+</section>

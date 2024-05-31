@@ -1,0 +1,9 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="60" height="60" viewBox="0 0 60 60">
+  <g id="Icon" transform="translate(-810 -588)">
+    <circle id="Ellipse_10" data-name="Ellipse 10" cx="30" cy="30" r="30" transform="translate(810 588)" fill="#191919"/>
+    <g id="ic:round-call" transform="translate(828 606)">
+      <rect id="ic:round-call-2" data-name="ic:round-call" width="24" height="24" fill="none"/>
+      <path id="Vector" d="M12.631,11.4a.985.985,0,0,1,.9-.26l3.67.73a1,1,0,0,1,.8.98V17a1,1,0,0,1-1.03,1A18.049,18.049,0,0,1,9,15.57,18.075,18.075,0,0,1,2.431,9,17.921,17.921,0,0,1,0,1.03,1,1,0,0,1,1,0h4.15a1,1,0,0,1,.98.8l.75,3.68a1.026,1.026,0,0,1-.27.9L4.111,7.9a16.144,16.144,0,0,0,6,6l2.52-2.5Z" transform="translate(2.999 3)" fill="#fff"/>
+    </g>
+  </g>
+</svg>

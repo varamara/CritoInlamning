@@ -1,0 +1,9 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="60" height="60" viewBox="0 0 60 60">
+  <g id="Icon" transform="translate(-1263 -588)">
+    <circle id="Ellipse_10" data-name="Ellipse 10" cx="30" cy="30" r="30" transform="translate(1263 588)" fill="#191919"/>
+    <g id="dashicons:email-alt" transform="translate(1281 606)">
+      <rect id="dashicons:email-alt-2" data-name="dashicons:email-alt" width="24" height="24" fill="none"/>
+      <path id="Vector" d="M18.612,14.4H1.8A1.8,1.8,0,0,1,0,12.6V1.8A1.8,1.8,0,0,1,1.8,0H18.612a1.8,1.8,0,0,1,1.8,1.8V12.6A1.8,1.8,0,0,1,18.612,14.4ZM18.84,1.668c-.4-.4-.8-.2-1.14.084L10.2,7.8,2.712,1.752c-.336-.288-.744-.48-1.14-.084a.659.659,0,0,0,.036,1.008L6.48,7.14,1.8,12.012a.465.465,0,0,0-.072.612.546.546,0,0,0,.672.06L7.644,8.208l2.556,2.34,2.568-2.34,5.244,4.476a.546.546,0,0,0,.672-.06.465.465,0,0,0-.072-.612L13.932,7.14,18.8,2.676a.659.659,0,0,0,.036-1.008Z" transform="translate(2.388 4.8)" fill="#fff"/>
+    </g>
+  </g>
+</svg>

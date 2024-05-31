@@ -1,0 +1,16 @@
+﻿@inherits Umbraco.Cms.Web.Common.Views.UmbracoViewPage<Umbraco.Cms.Core.Models.Blocks.BlockListItem>
+@using ContentModels = Umbraco.Cms.Web.Common.PublishedModels;
+
+@{
+    var content = (ContentModels.WhyChooseUs)Model.Content;
+}
+
+<div class="choose-us-list-item">
+    <div class="circle-frame">
+        <i class="@content.Value("whyChooseUsBlockListIcon")"></i>
+    </div>
+    <div>
+        <h2>@content.Value("whyChooseUsBlockListTitle")</h2>
+        <p>@content.Value("whyChooseUsBlockListDescription")</p>
+    </div>
+</div>

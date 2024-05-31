@@ -1,0 +1,41 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="327" height="39.5" viewBox="0 0 327 39.5">
+  <g id="Pagination" transform="translate(-796.5 -2928.5)">
+    <g id="_1" data-name="1" transform="translate(895 2929.5)">
+      <rect id="_1-2" data-name="1" width="38" height="38" fill="none"/>
+      <rect id="Rectangle" width="38" height="38" rx="5" fill="#fff" stroke="#eae9f2" stroke-width="1"/>
+      <text id="_1-3" data-name="1" transform="translate(16 6)" fill="#19191b" font-size="21" font-family="SegoeUI, Segoe UI" letter-spacing="-0.031em"><tspan x="-5.66" y="23">2</tspan></text>
+    </g>
+    <g id="_1_copy_9" data-name="1 copy 9" transform="translate(851 2929)">
+      <rect id="_1_copy_9-2" data-name="1 copy 9" width="38" height="38" fill="none"/>
+      <rect id="Rectangle-2" data-name="Rectangle" width="38" height="38" rx="5" fill="#191919" stroke="#191919" stroke-width="1"/>
+      <text id="_2" data-name="2" transform="translate(13 6)" fill="#fff" font-size="21" font-family="SegoeUI, Segoe UI" letter-spacing="-0.031em"><tspan x="-5.66" y="23">1</tspan></text>
+    </g>
+    <g id="_1_copy_10" data-name="1 copy 10" transform="translate(941 2929)">
+      <rect id="_1_copy_10-2" data-name="1 copy 10" width="38" height="38" fill="none"/>
+      <rect id="Rectangle-3" data-name="Rectangle" width="38" height="38" rx="5" fill="#fff" stroke="#eae9f2" stroke-width="1"/>
+      <text id="_3" data-name="3" transform="translate(13 7)" fill="#19191b" font-size="21" font-family="SegoeUI, Segoe UI" letter-spacing="-0.031em"><tspan x="-5.66" y="23">3</tspan></text>
+    </g>
+    <g id="_1_copy_11" data-name="1 copy 11" transform="translate(989 2929)">
+      <rect id="_1_copy_11-2" data-name="1 copy 11" width="38" height="38" fill="none"/>
+      <rect id="Rectangle-4" data-name="Rectangle" width="38" height="38" rx="5" fill="#fff" stroke="#eae9f2" stroke-width="1"/>
+      <text id="_" data-name="…" transform="translate(13 7.332)" fill="#19191b" font-size="21" font-family="SegoeUI, Segoe UI" letter-spacing="-0.031em"><tspan x="-7.696" y="23">…</tspan></text>
+    </g>
+    <g id="_1_copy_12" data-name="1 copy 12" transform="translate(1037 2929)">
+      <rect id="_1_copy_12-2" data-name="1 copy 12" width="38" height="38" fill="none"/>
+      <rect id="Rectangle-5" data-name="Rectangle" width="38" height="38" rx="5" transform="translate(0 0.5)" fill="#fff" stroke="#eae9f2" stroke-width="1"/>
+      <text id="_9" data-name="9" transform="translate(12.5 7)" fill="#19191b" font-size="21" font-family="SegoeUI, Segoe UI" letter-spacing="-0.031em"><tspan x="-5.66" y="23">9</tspan></text>
+    </g>
+    <g id="_1_copy_13" data-name="1 copy 13">
+      <rect id="Rectangle-6" data-name="Rectangle" width="38" height="38" rx="5" transform="translate(1085 2929)" fill="#fff" stroke="#eae9f2" stroke-width="1"/>
+      <g id="small-right">
+        <path id="Path" d="M0,0,5,5,0,10" transform="translate(1102 2943)" fill="none" stroke="#111" stroke-linecap="square" stroke-width="2" fill-rule="evenodd"/>
+      </g>
+    </g>
+    <g id="_1_copy_14" data-name="1 copy 14">
+      <rect id="Rectangle-7" data-name="Rectangle" width="38" height="38" rx="5" transform="translate(835 2967) rotate(180)" fill="#fff" stroke="#eae9f2" stroke-width="1"/>
+      <g id="small-right-2" data-name="small-right">
+        <path id="Path-2" data-name="Path" d="M0,0,5-5,0-10" transform="translate(818 2943) rotate(180)" fill="none" stroke="#111" stroke-linecap="square" stroke-width="2" fill-rule="evenodd"/>
+      </g>
+    </g>
+  </g>
+</svg>

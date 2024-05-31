@@ -1,0 +1,14 @@
+﻿@using Umbraco.Cms.Web.Common.PublishedModels;
+@inherits Umbraco.Cms.Web.Common.Views.UmbracoViewPage<ContentModels.NewsArticlePage>
+@using ContentModels = Umbraco.Cms.Web.Common.PublishedModels;
+@{
+	Layout = "_Layout.cshtml";
+}
+
+<header class="bg-color">
+    @await Html.PartialAsync("shared/_BreadcrumbSection")
+</header>
+
+<main>
+    @await Html.PartialAsync("newsPartials/_NewsArticleSection")
+</main>
