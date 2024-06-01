@@ -50,12 +50,11 @@ body .h2-2 {
   transition: transform 0.2s;
   cursor: pointer;
 }
+.button i, .black-button i, .transparent-button i, .yellow-button i {
+  margin-left: 10px;
+}
 .button:hover, .black-button:hover, .transparent-button:hover, .yellow-button:hover {
   transform: scale(1.05);
-}
-
-a i {
-  margin-left: 15px;
 }
 
 .arrow-button {
@@ -112,15 +111,15 @@ a i {
   width: 12px;
   height: 12px;
   border-radius: 50%;
-  background-color: rgb(148, 148, 148);
+  background-color: #656565;
   display: inline-block;
 }
 .dot-pagination .dot-link.active {
-  background-color: rgba(83, 83, 83, 0.1098039216);
+  background-color: #191919;
 }
 .dot-pagination .dot-link:hover {
   cursor: pointer;
-  background-color: rgba(83, 83, 83, 0.1098039216);
+  background-color: #191919;
 }
 
 .yellow-button {
@@ -135,6 +134,9 @@ a i {
 .black-button {
   background-color: black;
   color: white;
+}
+.black-button i {
+  color: white !important;
 }
 
 .bg-color {
@@ -564,58 +566,55 @@ a i {
   background-color: #f0efe9;
 }
 
-.projects-section {
+.projects-case-studies-section {
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  margin-top: 100px;
+}
+.projects-case-studies-section .container {
   display: flex;
   flex-direction: column;
   justify-content: center;
   align-items: center;
-  margin-top: 100px;
 }
-.projects-section .projects-title {
+.projects-case-studies-section .container .projects-title {
   margin-bottom: 60px;
 }
-.projects-section .projects-title h2 {
+.projects-case-studies-section .container .projects-title h2 {
   text-align: center;
 }
-.projects-section .projects-grid {
+.projects-case-studies-section .container .projects-articles {
   display: grid;
   grid-template-columns: repeat(2, 1fr);
   grid-template-rows: repeat(2, 1fr);
-  grid-column-gap: 30px;
-  grid-row-gap: 60px;
+  gap: 30px 60px;
   margin-bottom: 70px;
 }
-.projects-section .projects-grid .projects-card h2 {
+.projects-case-studies-section .container .projects-articles .projects-article h2 {
   margin-top: 30px;
   padding-bottom: 10px;
   border-bottom: 2px solid rgba(25, 25, 25, 0.1098039216);
 }
-.projects-section .projects-grid .projects-card a {
+.projects-case-studies-section .container .projects-articles .projects-article a {
   display: flex;
   justify-content: flex-end;
+  align-items: center;
   margin-top: 20px;
   font-size: 14px;
   text-decoration: none;
   color: #191919;
   transition: transform 0.2s;
 }
-.projects-section .projects-grid .projects-card a:hover {
+.projects-case-studies-section .container .projects-articles .projects-article a i {
+  margin-left: 10px;
+}
+.projects-case-studies-section .container .projects-articles .projects-article a:hover {
   color: red;
 }
-.projects-section .projects-grid .projects-1 {
-  grid-area: 1/1/2/2;
-}
-.projects-section .projects-grid .projects-2 {
-  grid-area: 1/2/2/3;
-}
-.projects-section .projects-grid .projects-3 {
-  grid-area: 2/1/3/2;
-}
-.projects-section .projects-grid .projects-4 {
-  grid-area: 2/2/3/3;
-}
 
-.team-section {
+.meet-our-team-section {
   width: 100%;
   display: flex;
   flex-direction: column;
@@ -625,25 +624,31 @@ a i {
   padding: 110px 0;
   background-color: #f9d783;
 }
-.team-section .team-section-container .team-title .team-title-text {
+.meet-our-team-section .container {
+  width: 1520px;
+  max-width: 100%;
+  margin: 0 auto;
+  overflow: hidden;
+}
+.meet-our-team-section .container .title .heading {
   display: flex;
   justify-content: space-between;
 }
-.team-section .team-section-container .team-title .team-title-text button {
+.meet-our-team-section .container .title .heading button {
   width: 221px;
 }
-.team-section .team-section-container .team-carousel {
+.meet-our-team-section .container .team-boxes .umb-block-list {
   display: flex;
   justify-content: center;
   margin: 70px 0 10px 0;
 }
-.team-section .team-section-container .team-carousel .team-card {
+.meet-our-team-section .container .team-boxes .umb-block-list .team-box {
   margin: 15px;
 }
-.team-section .team-section-container .team-carousel .team-card .card-text {
+.meet-our-team-section .container .team-boxes .umb-block-list .team-box .team-box-description {
   margin-top: 20px;
 }
-.team-section .team-section-container .testimonial-container {
+.meet-our-team-section .container .testimonial-container {
   margin-top: 70px;
   height: 887px;
   width: 1520px;
@@ -653,39 +658,40 @@ a i {
   justify-content: center;
   align-items: center;
 }
-.team-section .team-section-container .testimonial-container .testimonial-title {
+.meet-our-team-section .container .testimonial-container .testimonial-title {
   text-align: center;
 }
-.team-section .team-section-container .testimonial-container .testimonial-title h1 {
+.meet-our-team-section .container .testimonial-container .testimonial-title h1 {
   margin: 20px 0 70px 0;
 }
-.team-section .team-section-container .testimonial-container .testimonials {
+.meet-our-team-section .container .testimonial-container .testimonials .umb-block-list {
   width: 100%;
   display: flex;
   justify-content: space-evenly;
+  gap: 120px;
   margin-bottom: 100px;
 }
-.team-section .team-section-container .testimonial-container .testimonials .stars {
+.meet-our-team-section .container .testimonial-container .testimonials .umb-block-list .stars {
   margin-bottom: 30px;
 }
-.team-section .team-section-container .testimonial-container .testimonials .testimonials-card {
+.meet-our-team-section .container .testimonial-container .testimonials .umb-block-list .testimonials-card {
   width: 340px;
   height: 306px;
   padding: 5px;
 }
-.team-section .team-section-container .testimonial-container .testimonials .testimonials-card p {
+.meet-our-team-section .container .testimonial-container .testimonials .umb-block-list .testimonials-card p {
   font-size: 18px;
   line-height: 2;
 }
-.team-section .team-section-container .testimonial-container .testimonials .testimonials-card .profile {
+.meet-our-team-section .container .testimonial-container .testimonials .umb-block-list .testimonials-card .profile {
   display: flex;
   align-items: center;
   justify-content: center;
 }
-.team-section .team-section-container .testimonial-container .testimonials .testimonials-card .profile .profile-text {
+.meet-our-team-section .container .testimonial-container .testimonials .umb-block-list .testimonials-card .profile .profile-text {
   margin: 20px 0 0 10px;
 }
-.team-section .team-section-container .testimonial-container .testimonials .testimonials-card .profile p {
+.meet-our-team-section .container .testimonial-container .testimonials .umb-block-list .testimonials-card .profile p {
   margin-top: -12px;
   color: #f94d1c;
   font-weight: 400;

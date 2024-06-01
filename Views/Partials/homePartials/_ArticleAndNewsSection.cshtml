@@ -23,10 +23,10 @@
 <section class="article-and-news-section">
     <div class="container">
         <div class="title">
-            <h2 class="h2-2">Article & News</h2>
+            <h2 class="h2-2">@Model.Value("articleAndNewsSectionTitle")</h2>
             <div class="article-and-news-heading">
-                <h1>Get Every Single Article & News </h1>
-                <a href="#" class="transparent-button">Browse Articles <i class="fa-solid fa-arrow-up-right"></i></a>
+                <h1>@Model.Value("articleAndNewsSectionHeading")</h1>
+                <a href="@Model.Value("articleAndNewsSectionButtonUrl")" class="transparent-button">@Model.Value("articleAndNewsSectionButtonText")<i class="fa-solid fa-arrow-up-right"></i></a>
             </div>
         </div>
         <div class="articles">
@@ -41,43 +41,40 @@
                     var title = item.Name();
                     var preamble = item.Value("newsArticlePreamble");
 
-                    <a href="@url" class="article">
-                        <div class="article-date">
-                            <div class="day">@date.ToString("dd")</div>
-                            <div class="month">@date.ToString("MMM")</div>
-                        </div>
-                        <img src="@image?.Url()" alt="">
-                        <p class="category">@category</p>
-                        <h5>@title</h5>
-                        <p>@preamble</p>
-                    </a>
+            <a href="@url" class="article">
+                <div class="article-date">
+                    <div class="day">@date.ToString("dd")</div>
+                    <div class="month">@date.ToString("MMM")</div>
+                </div>
+                <img src="@image?.Url()" alt="@title">
+                <p class="category">@category</p>
+                <h5>@title</h5>
+                <p>@preamble</p>
+            </a>
                 }
             }
         </div>
         <nav class="dot-pagination" aria-label="Page navigation">
             @for (int i = 1; i <= Math.Ceiling((decimal)totalItems / itemsPerPage); i++)
             {
-                <a href="?page=@i" class="dot-link @(i == pageNumber ? "active" : "")"></a>
+            <a href="?page=@i" class="dot-link @(i == pageNumber ? "active" : "")"></a>
             }
         </nav>
     </div>
 </section>
 
 <script>
-document.addEventListener("DOMContentLoaded", function() {
-    // Återställ scrollpositionen om det finns en sparad position
-    if (localStorage.getItem("scrollPosition")) {
-        window.scrollTo(0, localStorage.getItem("scrollPosition"));
-        localStorage.removeItem("scrollPosition");
-    }
+    document.addEventListener("DOMContentLoaded", function () {
+        if (localStorage.getItem("scrollPosition")) {
+            window.scrollTo(0, localStorage.getItem("scrollPosition"));
+            localStorage.removeItem("scrollPosition");
+        }
 
-    // Lägg till event listeners på pagineringslänkarna
-    var paginationLinks = document.querySelectorAll(".dot-link");
-    paginationLinks.forEach(function(link) {
-        link.addEventListener("click", function() {
-            // Spara den aktuella scrollpositionen
-            localStorage.setItem("scrollPosition", window.scrollY);
+        var paginationLinks = document.querySelectorAll(".dot-link");
+        paginationLinks.forEach(function (link) {
+            link.addEventListener("click", function () {
+                localStorage.setItem("scrollPosition", window.scrollY);
+            });
         });
     });
-});
 </script>
