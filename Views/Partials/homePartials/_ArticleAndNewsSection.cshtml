@@ -1,0 +1,83 @@
+﻿@inherits Umbraco.Cms.Web.Common.Views.UmbracoViewPage
+@using Umbraco.Cms.Core.Models.PublishedContent
+@using System.Linq
+@using System
+@{
+    var itemsPerPage = 3;
+    var pageNumber = 1;
+
+    if (!int.TryParse(Context.Request.Query["page"], out pageNumber))
+    {
+        pageNumber = 1;
+    }
+
+    var selection = Umbraco?.Content(Guid.Parse("2ef6931a-33bb-4dd6-a11b-f46aa50d9849"))
+        .ChildrenOfType("newsArticlePage")?
+        .Where(x => x.IsVisible())
+        .OrderByDescending(x => x.CreateDate).ToList();
+
+    var totalItems = selection?.Count ?? 0;
+    var pagedItems = selection?.Skip((pageNumber - 1) * itemsPerPage).Take(itemsPerPage);
+}
+
+<section class="article-and-news-section">
+    <div class="container">
+        <div class="title">
+            <h2 class="h2-2">Article & News</h2>
+            <div class="article-and-news-heading">
+                <h1>Get Every Single Article & News </h1>
+                <a href="#" class="transparent-button">Browse Articles <i class="fa-solid fa-arrow-up-right"></i></a>
+            </div>
+        </div>
+        <div class="articles">
+            @if (pagedItems != null)
+            {
+                foreach (var item in pagedItems)
+                {
+                    var url = item.Url();
+                    var date = item.CreateDate;
+                    var image = item.Value<IPublishedContent>("newsArticleImage");
+                    var category = item.Value("newsArticleCategory");
+                    var title = item.Name();
+                    var preamble = item.Value("newsArticlePreamble");
+
+                    <a href="@url" class="article">
+                        <div class="article-date">
+                            <div class="day">@date.ToString("dd")</div>
+                            <div class="month">@date.ToString("MMM")</div>
+                        </div>
+                        <img src="@image?.Url()" alt="">
+                        <p class="category">@category</p>
+                        <h5>@title</h5>
+                        <p>@preamble</p>
+                    </a>
+                }
+            }
+        </div>
+        <nav class="dot-pagination" aria-label="Page navigation">
+            @for (int i = 1; i <= Math.Ceiling((decimal)totalItems / itemsPerPage); i++)
+            {
+                <a href="?page=@i" class="dot-link @(i == pageNumber ? "active" : "")"></a>
+            }
+        </nav>
+    </div>
+</section>
+
+<script>
+document.addEventListener("DOMContentLoaded", function() {
+    // Återställ scrollpositionen om det finns en sparad position
+    if (localStorage.getItem("scrollPosition")) {
+        window.scrollTo(0, localStorage.getItem("scrollPosition"));
+        localStorage.removeItem("scrollPosition");
+    }
+
+    // Lägg till event listeners på pagineringslänkarna
+    var paginationLinks = document.querySelectorAll(".dot-link");
+    paginationLinks.forEach(function(link) {
+        link.addEventListener("click", function() {
+            // Spara den aktuella scrollpositionen
+            localStorage.setItem("scrollPosition", window.scrollY);
+        });
+    });
+});
+</script>

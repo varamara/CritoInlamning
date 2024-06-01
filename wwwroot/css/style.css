@@ -54,6 +54,10 @@ body .h2-2 {
   transform: scale(1.05);
 }
 
+a i {
+  margin-left: 15px;
+}
+
 .arrow-button {
   transition: transform 0.3s;
   display: inline-flex;
@@ -69,6 +73,7 @@ body .h2-2 {
   line-height: 50px;
 }
 .arrow-button i {
+  margin-left: 0;
   color: #f0efe9;
   transition: color 0.3s;
 }
@@ -96,20 +101,26 @@ body .h2-2 {
   margin-right: 20px;
 }
 
-.dot-container {
+.dot-pagination {
   justify-content: center;
   display: flex;
+  list-style: none;
+  padding: 0;
 }
-.dot-container .dot {
+.dot-pagination .dot-link {
   margin: 5px;
   width: 12px;
   height: 12px;
   border-radius: 50%;
-  background-color: rgba(128, 128, 128, 0.534);
+  background-color: rgb(148, 148, 148);
+  display: inline-block;
 }
-.dot-container .dot:hover {
+.dot-pagination .dot-link.active {
+  background-color: rgba(83, 83, 83, 0.1098039216);
+}
+.dot-pagination .dot-link:hover {
   cursor: pointer;
-  background-color: #191919;
+  background-color: rgba(83, 83, 83, 0.1098039216);
 }
 
 .yellow-button {
@@ -139,6 +150,45 @@ body .h2-2 {
 
 .padding {
   padding: 0 200px;
+}
+
+.articles {
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr;
+  margin-bottom: 90px;
+  gap: 30px;
+}
+.articles .article {
+  position: relative;
+  text-decoration: none;
+  color: #191919;
+  border: 1px solid rgba(255, 255, 255, 0.1);
+}
+.articles .article h5 {
+  font-weight: 700;
+  font-size: 22px;
+}
+.articles .article p {
+  margin-top: 20px;
+  line-height: 2;
+}
+.articles .article .article-date {
+  position: absolute;
+  left: 16px;
+  top: 16px;
+  background-color: #f9d783;
+  height: 64px;
+  width: 56px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+}
+.articles .article .article-date .day {
+  font-weight: 600;
+}
+.articles .article .category {
+  margin: 20px 0;
 }
 
 .navbar-section {
@@ -641,32 +691,25 @@ body .h2-2 {
   font-weight: 400;
 }
 
-.blog-section {
+.article-and-news-section {
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+.article-and-news-section .container {
   display: flex;
   flex-direction: column;
   justify-content: center;
   margin: 100px 0;
-  width: 1320px;
-  height: 642px;
 }
-.blog-section .blog-title-text {
-  margin-top: 20px;
+.article-and-news-section .container .article-and-news-heading {
+  margin: 20px 0;
   display: flex;
   justify-content: space-between;
 }
-.blog-section .blog-title-text button {
+.article-and-news-section .container .article-and-news-heading button {
   width: 221px;
-}
-.blog-section .blog-cards {
-  margin: 40px 0;
-  display: flex;
-  justify-content: space-around;
-}
-.blog-section .blog-cards .blog-card:nth-child(2) {
-  margin: 0 28px;
-}
-.blog-section .blog-cards p {
-  margin: 20px 0;
 }
 
 .newsletter-section {
@@ -825,44 +868,6 @@ body .h2-2 {
   font-family: "DM Sans", sans-serif;
   font-size: 45px;
   font-weight: 700;
-}
-.news-grid-section .container .articles {
-  display: grid;
-  grid-template-columns: 1fr 1fr 1fr;
-  margin-bottom: 90px;
-  gap: 30px;
-}
-.news-grid-section .container .articles .article {
-  position: relative;
-  text-decoration: none;
-  color: #191919;
-  border: 1px solid rgba(255, 255, 255, 0.1);
-}
-.news-grid-section .container .articles .article h5 {
-  font-weight: 700;
-  font-size: 22px;
-}
-.news-grid-section .container .articles .article p {
-  margin-top: 20px;
-  line-height: 2;
-}
-.news-grid-section .container .articles .article .article-date {
-  position: absolute;
-  left: 16px;
-  top: 16px;
-  background-color: #f9d783;
-  height: 64px;
-  width: 56px;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  flex-direction: column;
-}
-.news-grid-section .container .articles .article .article-date .day {
-  font-weight: 600;
-}
-.news-grid-section .container .articles .article .category {
-  margin: 20px 0;
 }
 .news-grid-section nav {
   display: flex;
