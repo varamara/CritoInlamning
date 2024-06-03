@@ -1,0 +1,11 @@
+﻿@inherits Umbraco.Cms.Web.Common.Views.UmbracoViewPage
+<section class="newsletter-section">
+    <div class="newsletter-container">
+        <h1>@Model.Value("newsletterHeading")</h1>
+        <div class="input-container">
+            <input class="input-field" type="text" placeholder="Enter Your Email">
+            <a href="@Model.Value("newsletterButtonUrl")" class="yellow-button">@Model.Value("newsletterButtonText")<i class="fa-solid fa-arrow-up-right"></i></a>
+        </div>
+    </div>
+    <img src="/images/background_effects/element-2.svg" alt="">
+</section>

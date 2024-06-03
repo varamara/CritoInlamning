@@ -1,36 +1,44 @@
 ﻿@inherits Umbraco.Cms.Web.Common.Views.UmbracoViewPage
-@using Umbraco.Cms.Core
-@using Umbraco.Cms.Core.Models.PublishedContent
 @using Umbraco.Cms.Core.Routing
-@using Umbraco.Extensions
-
+@using Umbraco.Cms.Core.Models.Blocks
 @inject IPublishedValueFallback PublishedValueFallback
 @inject IPublishedUrlProvider PublishedUrlProvider
-
 
 @{
     var site = Model.Root();
     var selection = Model.Root().Children.Where(x => x.IsVisible(PublishedValueFallback)).ToArray();
-}
 
+    var globalSettingsPage = Umbraco.Content(1276);
+
+    string phone = globalSettingsPage?.Value<string>("navbarSectionPhone");
+    string email = globalSettingsPage?.Value<string>("navbarSectionEmail");
+    string location = globalSettingsPage?.Value<string>("navbarSectionLocation");
+    var socialMediaLinks = globalSettingsPage?.Value<BlockListModel>("socialMediaLinksBlockList");
+}
 
 <section class="navbar-section padding bg-color">
     <nav class="navbar">
         <img class="logo" src="~/images/shared_img/main-logo.svg" alt="crito-logo" />
         <div class="contact-info">
             <ul class="address">
-                <li><i class="fa-light fa-phone-volume"></i>+46 7(8) 121 470 50</li>
-                <li><i class="fa-light fa-envelope"></i>info@crito.com</li>
-                <li>
-                    <i class="fa-light fa-location-dot"></i>Sveavägen 31, 111 34
-                    STOCKHOLM
-                </li>
+                <li><i class="fa-light fa-phone-volume"></i>@phone</li>
+                <li><i class="fa-light fa-envelope"></i>@email</li>
+                <li><i class="fa-light fa-location-dot"></i>@location</li>
             </ul>
             <ul class="socials">
-                <li><a href="https://facebook.com" target="_blank"><i class="fa-brands fa-facebook"></i></a></li>
-                <li><a href="https://twitter.com" target="_blank"><i class="fa-brands fa-twitter"></i></a></li>
-                <li><a href="https://instagram.com" target="_blank"><i class="fa-brands fa-instagram"></i></a></li>
-                <li><a href="https://linkedin.com" target="_blank"><i class="fa-brands fa-linkedin"></i></a></li>
+                @if (socialMediaLinks != null && socialMediaLinks.Count() > 0)
+                {
+                    foreach (var link in socialMediaLinks)
+                    {
+                        var icon = link.Content.Value<string>("socialMediaIcon");
+                        var url = link.Content.Value<string>("socialMediaUrl");
+                <li>
+                    <a href="@url" target="_blank">
+                        <i class="@icon"></i>
+                    </a>
+                </li>
+                    }
+                }
             </ul>
         </div>
 
@@ -41,14 +49,14 @@
                 </li>
 
                 @if (selection?.Length > 0)
-            {
-                foreach (var item in selection)
                 {
+                    foreach (var item in selection)
+                    {
                 <li><a class="@(item.IsAncestorOrSelf(Model)? "active" : null)" href="@item.Url(PublishedUrlProvider)">@item.Name</a></li>
+                    }
                 }
-            }
             </ul>
-            <button class="yellow-button">Login<i class="fa-solid fa-arrow-up-right"></i></button>
+            <a href="@Model.Value("navbarSectionButtonUrl")" class="yellow-button">@Model.Value("navbarSectionButtonText")<i class="fa-solid fa-arrow-up-right"></i></a>
         </div>
     </nav>
 </section>

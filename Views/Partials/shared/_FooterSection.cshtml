@@ -1,62 +1,73 @@
 ﻿@inherits Umbraco.Cms.Web.Common.Views.UmbracoViewPage
+@using Umbraco.Cms.Core.Routing
+@using Umbraco.Cms.Core.Models.Blocks
+@inject IPublishedValueFallback PublishedValueFallback
+@inject IPublishedUrlProvider PublishedUrlProvider
+
+@{
+    var site = Model.Root();
+    var selection = Model.Root().Children.Where(x => x.IsVisible(PublishedValueFallback)).ToArray();
+
+    var globalSettingsPage = Umbraco.Content(1276);
+    string description = globalSettingsPage?.Value<string>("footerSectionDescription");
+    var footerLinks = globalSettingsPage?.Value<BlockListModel>("footerSectionBlockList");
+
+    var socialMediaLinks = globalSettingsPage?.Value<BlockListModel>("socialMediaLinksBlockList");
+}
 
 <section class="footer-section">
     <div class="footer-container">
         <div class="footer-nav">
             <div class="footer-logo">
                 <img src="/images/white_socials/Logo.svg" alt="">
-                <p>
-                    Lorem ipsum dolor sit amet consectetur adipisicing elit. Placeat obcaecati voluptas voluptates!
-                    Voluptates laborum nam ratione minus necessitatibus, iure praesentium.
-                </p>
+                <p>@description</p>
             </div>
 
+            @if (footerLinks != null)
+                {
+            foreach (var block in footerLinks)
+                    {
             <div class="footer-links">
-                <h2>Company</h2>
+                <h2>@(block.Content?.Value<string>("linkBlockListTitle"))</h2>
                 <ul>
-                    <li><a href="">About Us</a></li>
-                    <li><a href="">Features</a></li>
-                    <li><a href="">Works</a></li>
-                    <li><a href="">Career</a></li>
+
+                    @if (block.Content?.Value<BlockListModel>("linkBlockListLink") != null)
+                                {
+                    foreach (var link in block.Content?.Value<BlockListModel>("linkBlockListLink"))
+                                    {
+                                        var linkUrl = link.Content.Value<string>("footerLinkBlockUrl");
+                                        var linkTitle = link.Content.Value<string>("footerLinkBlockTitle");
+
+                                        if (!string.IsNullOrEmpty(linkUrl) && !string.IsNullOrEmpty(linkTitle))
+                                        {
+                    <li><a href="@linkUrl">@linkTitle</a></li>
+                                        }
+                                    }
+                                }
                 </ul>
             </div>
-            <div class="footer-links">
-                <h2>Help</h2>
-                <ul>
-                    <li><a href="">Customer Support</a></li>
-                    <li><a href="">Delivery Details</a></li>
-                    <li><a href="">Terms & Conditions</a></li>
-                    <li><a href="">Privacy Policy</a></li>
-                </ul>
-            </div>
-            <div class="footer-links">
-                <h2>Resources</h2>
-                <ul>
-                    <li><a href="">Free eBooks</a></li>
-                    <li><a href="">Development Tutorial</a></li>
-                    <li><a href="">How to - Blog</a></li>
-                    <li><a href="">Youtube Playlist</a></li>
-                </ul>
-            </div>
-            <div class="footer-links">
-                <h2>Link</h2>
-                <ul>
-                    <li><a href="">Free eBooks</a></li>
-                    <li><a href="">Development Tutorial</a></li>
-                    <li><a href="">How to - Blog</a></li>
-                    <li><a href="">Youtube Playlist</a></li>
-                </ul>
-            </div>
-            <img class="footer-img" src="~/images/background_effects/footer_element.svg" alt="">
+                    }
+                }
+
+            <img class="footer-img" src="/images/background_effects/footer_element.svg" alt="">
         </div>
 
         <div class="socials-links">
-            <p>&copy; @DateTime.Now.Year Crito - Consulting Company Inc. All Rights Reserved.</p>
+            <p>&copy; 2023 Crito - Consulting Company Inc. All Rights Reserved.</p>
             <ul>
-                <li><a href="https://facebook.com" target="_blank"><i class="fa-brands fa-facebook"></i></a></li>
-                <li><a href="https://twitter.com" target="_blank"><i class="fa-brands fa-twitter"></i></a></li>
-                <li><a href="https://instagram.com" target="_blank"><i class="fa-brands fa-instagram"></i></a></li>
-                <li><a href="https://linkedin.com" target="_blank"><i class="fa-brands fa-linkedin"></i></a></li>
+                @if (socialMediaLinks != null && socialMediaLinks.Count() > 0)
+                    {
+                        foreach (var link in socialMediaLinks)
+                        {
+                            var icon = link.Content.Value<string>("socialMediaIcon");
+                            var url = link.Content.Value<string>("socialMediaUrl");
+                <li>
+                    <a href="@url" target="_blank">
+                        <i class="@icon" style="color: #ffffff;"></i>
+                    </a>
+                </li>
+                        }
+                    }
             </ul>
         </div>
     </div>

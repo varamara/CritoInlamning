@@ -5,25 +5,25 @@
 
 @{
     var content = (ContentModels.TestimonialsBlockList)Model.Content;
-    var rating = content.Value<int>("testimonialsBlockListRating");
+    var rating = content.Value<int>("testimonialBlockListRating");
     var testimonialImage = content.Value<MediaWithCrops>("testimonialsBlockListImage");
+    
 }
 
 <div class="testimonials-card">
     <div class="stars">
         @for (var i = 0; i < rating; i++)
         {
-        <i class="fa-sharp fa-solid fa-star"></i>
+            <i class="fa-sharp fa-solid fa-star" style="color: #f94d1c; font-size: 14px;" aria-hidden="true"></i>
         }
     </div>
     <p>@content.Value("testimonialsBlockListContent")</p>
     <div class="profile">
         @{
             if (testimonialImage != null) {
-            <img src="@testimonialImage.Url()" alt="">
+                <img src="@testimonialImage.Url()" alt="">
             }
         }
-        <img src="@content.Value("testimonialsBlockListImage")" alt="">
         <div class="profile-text">
             <h2>@content.Value("testimonialsBlockListName")</h2>
             <p>@content.Value("testimonialsBlockListRole")</p>
