@@ -233,7 +233,7 @@ body .h2-2 {
   padding: 10px 40px 0 10px;
   color: #191919;
 }
-.navbar-section .navbar .contact-info .address li img {
+.navbar-section .navbar .contact-info .address li i {
   margin: 0 5px 5px 0;
 }
 .navbar-section .navbar .contact-info .socials {
@@ -738,75 +738,76 @@ body .h2-2 {
 }
 
 .footer-section {
-  display: flex;
-  flex-direction: column;
-  justify-content: space-between;
   color: rgba(255, 255, 255, 0.696);
   width: 100%;
   height: 100%;
   background-color: #0e1021;
-}
-.footer-section ul {
-  list-style: none;
-}
-.footer-section ul h2 {
-  color: white;
-  margin-bottom: 35px;
-}
-.footer-section ul li a {
-  line-height: 2.5;
-  text-decoration: none;
-  color: rgba(255, 255, 255, 0.696);
-}
-.footer-section ul li a:hover {
-  color: white;
-  cursor: pointer;
-  text-decoration: underline;
 }
 .footer-section .footer-container {
   padding-top: 80px;
 }
 .footer-section .footer-container .footer-nav {
   border-top: 2px solid rgba(255, 255, 255, 0.104);
+  border-bottom: 2px solid rgba(255, 255, 255, 0.104);
   padding-top: 30px;
   position: relative;
   width: 100%;
   height: 350px;
   display: flex;
-  align-self: flex-start;
   justify-content: center;
 }
-.footer-section .footer-container .footer-nav .umb-block-list {
+.footer-section .footer-container .footer-nav .footer-content {
+  width: 309px;
+  height: 208px;
+  margin-right: 100px;
+}
+.footer-section .footer-container .footer-nav .footer-content p {
+  margin-top: 20px;
+}
+.footer-section .footer-container .footer-nav .footer-links {
   display: flex;
+  justify-content: space-between;
+}
+.footer-section .footer-container .footer-nav .footer-links .footer-link {
+  width: 156px;
+  height: 213px;
+  margin: 0 60px;
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  text-align: left;
+}
+.footer-section .footer-container .footer-nav .footer-links .footer-link ul {
+  margin-top: 40px;
+  list-style: none;
+  padding: 0;
+}
+.footer-section .footer-container .footer-nav .footer-links .footer-link ul li a {
+  line-height: 2.5;
+  text-decoration: none;
+  color: rgba(255, 255, 255, 0.825);
+}
+.footer-section .footer-container .footer-nav .footer-links .footer-link ul li a:hover {
+  color: white;
+  cursor: pointer;
+  text-decoration: underline;
 }
 .footer-section .footer-container .footer-nav .footer-img {
   position: absolute;
   right: 0;
   bottom: 0;
 }
-.footer-section .footer-container .footer-nav .footer-logo {
-  width: 309px;
-  height: 208px;
-}
-.footer-section .footer-container .footer-nav .footer-logo p {
-  margin-top: 20px;
-}
-.footer-section .footer-container .footer-nav .footer-links {
-  margin-left: 80px;
-  text-align: start;
-}
 .footer-section .footer-container .socials-links {
   text-decoration: none;
-  list-style: none;
   width: 100%;
   height: 80px;
   color: rgba(255, 255, 255, 0.696);
-  border-top: 2px solid rgba(255, 255, 255, 0.104);
   display: flex;
   justify-content: space-around;
   align-items: center;
 }
 .footer-section .footer-container .socials-links ul {
+  list-style: none;
   display: flex;
   justify-content: space-around;
   width: 200px;
@@ -933,32 +934,37 @@ body .h2-2 {
 
 .news-article-section {
   padding: 100px 0;
-  width: 1920px;
+  width: 100%;
   display: flex;
   justify-content: center;
 }
 .news-article-section .container {
-  margin-right: 100px;
-  width: 768px;
+  display: flex;
+  justify-content: center;
 }
-.news-article-section .container .news-article-title ul {
+.news-article-section .container .article-details {
   margin: 20px 0 60px 0;
   display: flex;
   width: 450px;
   font-size: 20px;
+  align-items: center;
   justify-content: space-between;
 }
-.news-article-section .container .news-article-title ul li::marker {
+.news-article-section .container .article-details i {
   color: #f9d783;
+  font-size: 10px;
 }
 .news-article-section .container .content {
+  width: 768px;
   font-size: 16px;
   font-family: "Inter", sans-serif;
 }
-.news-article-section .container .content img {
-  margin-bottom: 40px;
+.news-article-section .container .content .article-img {
+  width: 758px;
+  height: 500px;
 }
 .news-article-section .container .content p {
+  margin-top: 40px;
   color: rgba(25, 25, 25, 0.6980392157);
 }
 .news-article-section .container .content .quote {
@@ -992,21 +998,21 @@ body .h2-2 {
   color: white;
   cursor: pointer;
 }
-.news-article-section .side-content {
-  margin-top: 215px;
+.news-article-section aside {
+  margin: 215px 0 0 140px;
   width: 420px;
 }
-.news-article-section .side-content h2 {
+.news-article-section aside h2 {
   margin-left: 50px;
   background-image: linear-gradient(to left, transparent 85%, #0e1021 85%);
   background-size: 100% 2px;
   background-position: bottom;
   background-repeat: no-repeat;
 }
-.news-article-section .side-content .search-container {
+.news-article-section aside .search-container {
   position: relative;
 }
-.news-article-section .side-content .search-container .search-input {
+.news-article-section aside .search-container .search-input {
   font-family: "Inter", sans-serif;
   font-weight: 300;
   border: none;
@@ -1016,7 +1022,7 @@ body .h2-2 {
   width: 100%;
   background-color: rgba(25, 25, 25, 0.1098039216);
 }
-.news-article-section .side-content .search-container .search-button {
+.news-article-section aside .search-container .search-button {
   position: absolute;
   right: 30px;
   top: 13px;
@@ -1025,35 +1031,41 @@ body .h2-2 {
   cursor: pointer;
   padding: 0;
 }
-.news-article-section .side-content .search-container .search-button i {
+.news-article-section aside .search-container .search-button i {
   font-size: 1rem;
 }
-.news-article-section .side-content .recent-posts {
+.news-article-section aside .recent-posts {
   padding-top: 40px;
   height: 554px;
   border: 1px solid rgba(25, 25, 25, 0.1098039216);
   margin: 40px 0;
+  overflow-y: auto;
 }
-.news-article-section .side-content .recent-posts .recent-list {
+.news-article-section aside .recent-posts h2 {
+  margin-left: 40px;
+}
+.news-article-section aside .recent-posts .recent-list {
   list-style: none;
   font-family: "DM Sans", sans-serif;
   font-weight: 700;
+  margin-left: 23px;
+  padding: 0;
 }
-.news-article-section .side-content .recent-posts .recent-list li {
+.news-article-section aside .recent-posts .recent-list li {
   width: 339px;
   line-height: 1.7;
   border-bottom: 1px solid rgba(25, 25, 25, 0.1098039216);
   padding: 10px 20px;
 }
-.news-article-section .side-content .recent-posts .recent-list li p {
+.news-article-section aside .recent-posts .recent-list li p {
   font-family: "Inter", sans-serif;
   font-weight: 400;
   font-size: 14px;
 }
-.news-article-section .side-content .recent-posts .recent-list li:nth-child(4) {
+.news-article-section aside .recent-posts .recent-list li:nth-child(4) {
   border-bottom: none;
 }
-.news-article-section .side-content .categories {
+.news-article-section aside .categories {
   padding-top: 40px;
   height: 326px;
   border: 1px solid rgba(25, 25, 25, 0.1098039216);
@@ -1061,15 +1073,15 @@ body .h2-2 {
   font-family: "DM Sans", sans-serif;
   font-weight: 700;
 }
-.news-article-section .side-content .categories ul {
+.news-article-section aside .categories ul {
   list-style: none;
 }
-.news-article-section .side-content .categories ul li {
+.news-article-section aside .categories ul li {
   width: 339px;
   line-height: 1.7;
   padding: 5px 20px;
 }
-.news-article-section .side-content .categories ul li p {
+.news-article-section aside .categories ul li p {
   font-family: "Inter", sans-serif;
   font-weight: 400;
   font-size: 14px;

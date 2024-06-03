@@ -9,10 +9,11 @@
     var selection = Model.Root().Children.Where(x => x.IsVisible(PublishedValueFallback)).ToArray();
 
     var globalSettingsPage = Umbraco.Content(1276);
-
     string phone = globalSettingsPage?.Value<string>("navbarSectionPhone");
     string email = globalSettingsPage?.Value<string>("navbarSectionEmail");
     string location = globalSettingsPage?.Value<string>("navbarSectionLocation");
+    string buttonUrl = globalSettingsPage?.Value<string>("navbarSectionButtonUrl");
+    string buttonText = globalSettingsPage?.Value<string>("navbarSectionButtonText");
     var socialMediaLinks = globalSettingsPage?.Value<BlockListModel>("socialMediaLinksBlockList");
 }
 
@@ -56,7 +57,7 @@
                     }
                 }
             </ul>
-            <a href="@Model.Value("navbarSectionButtonUrl")" class="yellow-button">@Model.Value("navbarSectionButtonText")<i class="fa-solid fa-arrow-up-right"></i></a>
+            <a href="@buttonUrl" class="yellow-button">@buttonText<i class="fa-solid fa-arrow-up-right"></i></a>
         </div>
     </nav>
 </section>

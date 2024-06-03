@@ -7,67 +7,62 @@
 @{
     var site = Model.Root();
     var selection = Model.Root().Children.Where(x => x.IsVisible(PublishedValueFallback)).ToArray();
-
     var globalSettingsPage = Umbraco.Content(1276);
     string description = globalSettingsPage?.Value<string>("footerSectionDescription");
     var footerLinks = globalSettingsPage?.Value<BlockListModel>("footerSectionBlockList");
-
     var socialMediaLinks = globalSettingsPage?.Value<BlockListModel>("socialMediaLinksBlockList");
 }
 
 <section class="footer-section">
     <div class="footer-container">
         <div class="footer-nav">
-            <div class="footer-logo">
+            <div class="footer-content">
                 <img src="/images/white_socials/Logo.svg" alt="">
                 <p>@description</p>
             </div>
-
-            @if (footerLinks != null)
+             <div class="footer-links">
+                @if (footerLinks != null)
                 {
-            foreach (var block in footerLinks)
+                    foreach (var block in footerLinks)
                     {
-            <div class="footer-links">
-                <h2>@(block.Content?.Value<string>("linkBlockListTitle"))</h2>
-                <ul>
-
-                    @if (block.Content?.Value<BlockListModel>("linkBlockListLink") != null)
+                        <div class="footer-link">
+                            <h2>@(block.Content?.Value<string>("linkBlockListTitle"))</h2>
+                            <ul>
+                                @if (block.Content?.Value<BlockListModel>("linkBlockListLink") != null)
                                 {
-                    foreach (var link in block.Content?.Value<BlockListModel>("linkBlockListLink"))
+                                    foreach (var link in block.Content?.Value<BlockListModel>("linkBlockListLink"))
                                     {
                                         var linkUrl = link.Content.Value<string>("footerLinkBlockUrl");
                                         var linkTitle = link.Content.Value<string>("footerLinkBlockTitle");
-
                                         if (!string.IsNullOrEmpty(linkUrl) && !string.IsNullOrEmpty(linkTitle))
                                         {
-                    <li><a href="@linkUrl">@linkTitle</a></li>
+                                        <li><a href="@linkUrl">@linkTitle</a></li>
                                         }
                                     }
                                 }
-                </ul>
-            </div>
+                            </ul>
+                        </div>
                     }
                 }
-
+            </div>
             <img class="footer-img" src="/images/background_effects/footer_element.svg" alt="">
         </div>
-
         <div class="socials-links">
             <p>&copy; 2023 Crito - Consulting Company Inc. All Rights Reserved.</p>
             <ul>
                 @if (socialMediaLinks != null && socialMediaLinks.Count() > 0)
+                {
+                    foreach (var link in socialMediaLinks)
                     {
-                        foreach (var link in socialMediaLinks)
-                        {
-                            var icon = link.Content.Value<string>("socialMediaIcon");
-                            var url = link.Content.Value<string>("socialMediaUrl");
-                <li>
-                    <a href="@url" target="_blank">
-                        <i class="@icon" style="color: #ffffff;"></i>
-                    </a>
-                </li>
-                        }
+                        var icon = link.Content.Value<string>("socialMediaIcon");
+                        var url = link.Content.Value<string>("socialMediaUrl");
+                        <li>
+                            <a href="@url" target="_blank">
+                                <i class="@icon" style="color: #ffffff;"></i>
+                            </a>
+                        </li>
                     }
+                }
             </ul>
         </div>
     </div>

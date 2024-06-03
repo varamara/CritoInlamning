@@ -14,13 +14,11 @@
             <ul>
                 @foreach (var item in selection.OrderBy(x => x.Level))
                     {
-                <li><a href="@item.Url(PublishedUrlProvider)">@item.Name</a></li>
+                <li class="m-5"><a href="@item.Url(PublishedUrlProvider)">@item.Name</a></li>
                     }
             </ul>
         </div>
-        <h1>@Model.Name</h1>
     </div>
-
     <img src="/images/background_effects/Element.svg" alt="">
 </section>
 }
