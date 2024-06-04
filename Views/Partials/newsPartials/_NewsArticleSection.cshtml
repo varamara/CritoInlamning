@@ -10,18 +10,18 @@
         .ChildrenOfType("newsArticlePage")?
         .Where(x => x.IsVisible())
         .OrderByDescending(x => x.CreateDate).ToList();
-        
+
     var globalSettingsPage = Umbraco.Content(1276);
     string asideTitle = globalSettingsPage?.Value<string>("newsArticleAsideTitle");
     string categoriesTitle = globalSettingsPage?.Value<string>("newsArticleAsideCategoriesTitle");
-    
+
 
 }
 
- <section class="news-article-section">
+<section class="news-article-section">
     <div class="container">
         <div class="news-article">
-             <h1>@Model.Name</h1>
+            <h1>@Model.Name</h1>
             <div class="article-details">
                 <span>@Model.CreateDate.ToString("MMM dd, yyyy")</span>
                 <i class="fa-solid fa-circle"></i>
@@ -36,7 +36,7 @@
                 <p>@Model.Value("newsArticleContent")</p>
             </div>
             <ul class="tags">
-              @foreach(var tag in Model.Value<IEnumerable<String>>("newsArticleTags"))
+                @foreach(var tag in Model.Value<IEnumerable<String>>("newsArticleTags"))
               {
                 <li>@tag</li>
               }
@@ -51,19 +51,21 @@
 
             <div class="recent-posts">
                 <h2>@asideTitle</h2>
-                 <ul class="recent-list">
-                @if ( selection != null) 
-                {
-                  foreach (var item in selection) 
-                  {
-                   var date = item.CreateDate;
-                   var title = item.Name();
-                   
-                   <li>@title
-                   <p>@date.ToString("MMM dd, yyyy")</p>
-                   </li>
-                  }
-                }
+                <ul class="recent-list">
+                    @if ( selection != null)
+                    {
+                      foreach (var item in selection)
+                      {
+                       var date = item.CreateDate;
+                       var title = item.Name();
+
+                        <li>
+                            @title
+                        <p>@date.ToString("MMM dd, yyyy")</p>
+                        </li>
+                       }
+                    }
+                </ul>
             </div>
             <div class="categories">
                 <h2>@categoriesTitle</h2>

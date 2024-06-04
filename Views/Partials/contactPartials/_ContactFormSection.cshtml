@@ -1,0 +1,28 @@
+﻿@using CritoInlamning.Models
+@inherits Umbraco.Cms.Web.Common.Views.UmbracoViewPage
+
+@{
+    var contactForm = new CritoInlamning.Models.ContactForm();
+}
+<section class="contact-form-section">
+    <div class="container">
+        <div class="form-content">
+            <h1>Leave us a message for any information</h1>
+        </div>
+        <div class="contact-form">
+
+            @using (Html.BeginUmbracoForm("Index", "Contacts", FormMethod.Post))
+            {
+                <div asp-validation-summary="ModelOnly"></div>
+
+                <input asp-for="@contactForm.Name" class="form-input" type="text" placeholder="Name">
+                <input asp-for="@contactForm.Email" class="form-input" type="email" placeholder="Email">
+                <textarea asp-for="@contactForm.Message" class="form-input" cols="30" rows="10" placeholder="Your Message"></textarea>
+
+                <button type="submit" class="yellow-button">Send Message<i class="fa-solid fa-arrow-up-right"></i></button>
+            }
+
+
+        </div>
+    </div>
+</section>

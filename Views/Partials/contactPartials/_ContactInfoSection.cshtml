@@ -1,0 +1,11 @@
+﻿@inherits Umbraco.Cms.Web.Common.Views.UmbracoViewPage<ContentModels.ContactPage>
+@using Umbraco.Cms.Web.Common.PublishedModels;
+@using ContentModels = Umbraco.Cms.Web.Common.PublishedModels;
+
+<section class="contact-info-section">
+    <div class="container">
+        <div class="info-cards">
+            @Html.GetBlockListHtml(Model.ContactInfoSectionBlockList)
+        </div>
+    </div>
+</section>

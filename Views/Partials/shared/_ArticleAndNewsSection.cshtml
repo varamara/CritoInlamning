@@ -18,15 +18,22 @@
 
     var totalItems = selection?.Count ?? 0;
     var pagedItems = selection?.Skip((pageNumber - 1) * itemsPerPage).Take(itemsPerPage);
+    
+    var globalSettingsPage = Umbraco.Content(1276);
+    string sectionTitle = globalSettingsPage?.Value<string>("articleAndNewsSectionTitle");
+    string sectionHeading = globalSettingsPage?.Value<string>("articleAndNewsSectionHeading");
+    string buttonText = globalSettingsPage?.Value<string>("articleAndNewsSectionButtonText");
+    string buttonUrl = globalSettingsPage?.Value<string>("articleAndNewsSectionButtonUrl");
+    
 }
 
-<section class="article-and-news-section">
+<section class="article-and-news-section bg-color">
     <div class="container">
         <div class="title">
-            <h2 class="h2-2">@Model.Value("articleAndNewsSectionTitle")</h2>
+            <h2 class="h2-2">@sectionTitle</h2>
             <div class="article-and-news-heading">
-                <h1>@Model.Value("articleAndNewsSectionHeading")</h1>
-                <a href="@Model.Value("articleAndNewsSectionButtonUrl")" class="transparent-button">@Model.Value("articleAndNewsSectionButtonText")<i class="fa-solid fa-arrow-up-right"></i></a>
+                <h1>@sectionHeading</h1>
+                <a href="@buttonUrl" class="transparent-button">@buttonText<i class="fa-solid fa-arrow-up-right"></i></a>
             </div>
         </div>
         <div class="articles">

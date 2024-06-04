@@ -46,7 +46,7 @@ body .h2-2 {
   padding: 13px 24px;
   display: flex;
   align-items: center;
-  justify-content: space-around;
+  justify-content: center;
   transition: transform 0.2s;
   cursor: pointer;
 }
@@ -708,7 +708,7 @@ body .h2-2 {
   display: flex;
   flex-direction: column;
   justify-content: center;
-  margin: 100px 0;
+  margin: 50px 0;
 }
 .article-and-news-section .container .article-and-news-heading {
   margin: 20px 0;
@@ -717,6 +717,7 @@ body .h2-2 {
 }
 .article-and-news-section .container .article-and-news-heading button {
   width: 221px;
+  margin-bottom: 40px;
 }
 
 .newsletter-section {
@@ -933,7 +934,7 @@ body .h2-2 {
 }
 
 .news-article-section {
-  padding: 100px 0;
+  padding: 130px 0 60px 0;
   width: 100%;
   display: flex;
   justify-content: center;
@@ -978,7 +979,8 @@ body .h2-2 {
   padding-left: 15px;
 }
 .news-article-section .container .tags {
-  margin-top: 50px;
+  margin: 50px 0 0 0;
+  padding: 0;
   display: flex;
   justify-content: space-between;
 }
@@ -1087,36 +1089,64 @@ body .h2-2 {
   font-size: 14px;
 }
 
-.address-section .address-container {
-  margin: 100px 0;
-  width: 1320px;
+.contact-info-section {
   display: flex;
+  justify-content: center;
   align-items: center;
-  justify-content: space-around;
 }
-.address-section .address-container .info-card {
+.contact-info-section .container {
+  width: 1320px;
+  margin: 120px 0 80px 0;
+  padding: 0;
+}
+.contact-info-section .container .info-cards .umb-block-list {
   display: flex;
+  justify-content: space-between;
+}
+.contact-info-section .container .info-cards .umb-block-list .info-card {
+  position: relative;
+  line-height: 13px;
   height: 206px;
+  display: flex;
   align-items: center;
   justify-content: center;
-  width: 420px;
+  width: 425px;
   border: 1px solid rgba(25, 25, 25, 0.1098039216);
 }
-.address-section .address-container .info-card p {
+.contact-info-section .container .info-cards .umb-block-list .info-card h2 {
+  margin-bottom: 30px;
+}
+.contact-info-section .container .info-cards .umb-block-list .info-card .black-circle {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  position: absolute;
+  left: 50px;
+  top: 40px;
+  border-radius: 50px;
+  width: 60px;
+  height: 60px;
+  background-color: #191919;
+}
+.contact-info-section .container .info-cards .umb-block-list .info-card .black-circle i {
+  font-size: 25px;
+  color: white;
+}
+.contact-info-section .container .info-cards .umb-block-list .info-card .info {
+  margin-left: 40px;
+}
+.contact-info-section .container .info-cards .umb-block-list .info-card .info p {
   font-size: 18px;
 }
-.address-section .address-container .info-card img {
-  margin-right: 20px;
-}
 
-.form-section {
+.contact-form-section {
   width: 100%;
   display: flex;
   flex-direction: column;
   align-items: center;
   justify-content: center;
 }
-.form-section .form-container {
+.contact-form-section .container {
   background-color: #f0efe9;
   margin-bottom: 100px;
   width: 1320px;
@@ -1126,22 +1156,22 @@ body .h2-2 {
   align-items: center;
   justify-content: center;
 }
-.form-section .form-container .contact-form {
+.contact-form-section .container .contact-form {
   height: 404px;
   width: 1021px;
 }
-.form-section .form-container .contact-form .form-input {
+.contact-form-section .container .contact-form .form-input {
   padding: 20px;
-  margin: 10px 0 30px 0;
+  margin: 15px 0;
   border: none;
   border-radius: 30px;
   width: 100%;
   height: 56px;
 }
-.form-section .form-container .contact-form .form-input:nth-child(3) {
+.contact-form-section .container .contact-form .form-input:nth-child(3) {
   height: 160px;
 }
-.form-section .form-container .contact-form button {
+.contact-form-section .container .contact-form button {
   width: 100%;
   justify-content: center;
 }
